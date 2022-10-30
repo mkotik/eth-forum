@@ -14,8 +14,9 @@ contract Forum {
         return Messages;
     }
 
-    function pushMessage(string memory _text) public {
+    function pushMessage(string memory _text) public returns(Message[] memory) {
         Messages.push(Message(_text, msg.sender));
+        return Messages;
     }
 
     constructor(string memory _text) {
